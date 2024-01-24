@@ -1,14 +1,17 @@
+#ifndef SERVOMOTOR_H
+#define SERVOMOTOR_H
+
 #include <Servo.h>
 
 class ServoMotor {
 public:
-    ServoMotor(int pin);
-    void setPosition(int position);
-    void turn180();
-    void turnMinus180();
+  ServoMotor(int pin);
+  void attach();
+  void rotate(int angle);
 
 private:
-    Servo servo;
-    int pin;
-    int position;
+  Servo servo;
+  int pin;
 };
+
+#endif 

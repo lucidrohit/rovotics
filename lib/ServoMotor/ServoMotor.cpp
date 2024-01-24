@@ -1,19 +1,14 @@
+// ServoMotor.cpp
 #include "ServoMotor.h"
 
-ServoMotor::ServoMotor(int pin) : pin(pin), position(0) {
-    servo.attach(pin);
-    servo.write(position);
+ServoMotor::ServoMotor(int pin) : pin(pin) {
+  // Do nothing here
 }
 
-void ServoMotor::setPosition(int position) {
-    this->position = position;
-    servo.write(position);
+void ServoMotor::attach() {
+  servo.attach(pin);
 }
 
-void ServoMotor::turn180() {
-    setPosition(180);
-}
-
-void ServoMotor::turnMinus180() {
-    setPosition(0);
+void ServoMotor::rotate(int angle) {
+  servo.write(angle);
 }
